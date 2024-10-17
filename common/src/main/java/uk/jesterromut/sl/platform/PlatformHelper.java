@@ -12,13 +12,4 @@ import java.util.function.Consumer;
 import static net.minecraft.server.command.CommandManager.literal;
 
 public final class PlatformHelper {
-    //@ExpectPlatform
-    public static void registerCommand() {
-        throw new AssertionError();
-    }
-
-    @ExpectPlatform
-    public static LiteralArgumentBuilder<ServerCommandSource> register() {
-        throw new AssertionError();
-    }
 }
