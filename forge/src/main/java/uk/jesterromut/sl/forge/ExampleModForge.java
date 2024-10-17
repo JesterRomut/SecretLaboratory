@@ -1,21 +1,14 @@
 package uk.jesterromut.sl.forge;
 
-import com.mojang.brigadier.builder.LiteralArgumentBuilder;
 import dev.architectury.platform.forge.EventBuses;
-import dev.architectury.registry.forge.CreativeTabRegistryImpl;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.server.command.ServerCommandSource;
-import net.minecraftforge.event.RegisterCommandsEvent;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
-import uk.jesterromut.sl.SecretLaboratoryCommands;
 import uk.jesterromut.sl.SecretLaboratoryMod;
-import uk.jesterromut.sl.platform.forge.PlatformHelperImpl;
-
-import java.util.logging.Logger;
+import uk.jesterromut.sl.SecretLaboratoryModClient;
 
 @Mod(SecretLaboratoryMod.MOD_ID)
 public final class ExampleModForge {
@@ -27,9 +20,21 @@ public final class ExampleModForge {
         // Run our common setup.
         SecretLaboratoryMod.init();
 
-        Logger.getGlobal().info("SecretLaboratory Mod Initialized");
-
     }
 
+    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)
+    public static class ForgeEvents {
+//        @SubscribeEvent
+//        public static void registerCommand(RegisterCommandsEvent event) {
+//            event.getDispatcher().register(SecretLaboratoryCommands.SCP_MORPH);
+//        }
+    }
 
+    @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
+    public static class ClientEvents {
+        @SubscribeEvent
+        public static void process(FMLClientSetupEvent event) {
+            event.enqueueWork(SecretLaboratoryModClient::init);
+        }
+    }
 }
