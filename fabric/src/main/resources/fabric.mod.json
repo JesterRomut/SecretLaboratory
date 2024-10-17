@@ -1,0 +1,38 @@
+{
+  "schemaVersion": 1,
+  "id": "jr_secret_laboratory",
+  "version": "${version}",
+  "name": "Secret Laboratory",
+  "description": "玩sl的都是大啥b中欧开战了nw直接让79入侵电脑标点老头传送过来把你们全抓到口袋空间被小僵尸论剑",
+  "authors": [
+    "JesterRomut",
+    "RobinEvals"
+  ],
+  "contact": {
+    "homepage": "https://fabricmc.net/",
+    "sources": "https://github.com/FabricMC/fabric-example-mod"
+  },
+  "license": "MIT",
+  "icon": "icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "uk.jesterromut.sl.fabric.ExampleModFabric"
+    ],
+    "client": [
+      "uk.jesterromut.sl.fabric.client.ExampleModFabricClient"
+    ]
+  },
+  "mixins": [
+    "jr_secret_laboratory.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.7",
+    "minecraft": "~1.19.2",
+    "java": ">=17",
+    "architectury": ">=6.6.92",
+    "fabric-api": "*"
+  },
+  "suggests": {
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "quilt_loader": {
+    "group": "${group}",
+    "id": "jr_secret_laboratory",
+    "version": "${version}",
+    "metadata": {
+      "name": "Secret Laboratory",
+      "description": "玩sl的都是大啥b中欧开战了nw直接让79入侵电脑标点老头传送过来把你们全抓到口袋空间被小僵尸论剑",
+      "contributors": {
+        "RobinEvals": "Author",
+        "JesterRomut": "Programmer"
+      },
+      "icon": "icon.png"
+    },
+    "intermediate_mappings": "net.fabricmc:intermediary",
+    "entrypoints": {
+      "init": [
+        "uk.jesterromut.sl.quilt.ExampleModQuilt"
+      ]
+    },
+    "depends": [
+      {
+        "id": "quilt_loader",
+        "version": "*"
+      },
+      {
+        "id": "quilt_base",
+        "version": "*"
+      },
+      {
+        "id": "minecraft",
+        "version": ">=1.19.2"
+      },
+      {
+        "id": "architectury",
+        "version": ">=6.6.92"
+      }
+    ]
+  },
+  "mixin": [
+    "jr_secret_laboratory.mixins.json"
+  ]
+}

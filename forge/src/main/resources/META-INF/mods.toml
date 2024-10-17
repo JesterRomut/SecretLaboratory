@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[43,)"
+#issueTrackerURL = ""
+license = "MIT"
+
+[[mods]]
+modId = "jr_secret_laboratory"
+version = "${version}"
+displayName = "Secret Laboratory"
+authors = "JesterRomut & RobinEvals"
+description = '''
+玩sl的都是大啥b中欧开战了nw直接让79入侵电脑标点老头传送过来把你们全抓到口袋空间被小僵尸论剑
+'''
+logoFile = "icon.png"
+
+[[dependencies.jr_secret_laboratory]]
+modId = "forge"
+mandatory = true
+versionRange = "[43,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.jr_secret_laboratory]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19.2,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.jr_secret_laboratory]]
+modId = "architectury"
+mandatory = true
+versionRange = "[6.6.92,)"
+ordering = "AFTER"
+side = "BOTH"
